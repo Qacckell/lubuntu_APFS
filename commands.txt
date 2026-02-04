@@ -1,0 +1,19 @@
+sudo apt update
+sudo apt install fuse libfuse3-dev bzip2 libbz2-dev cmake gcc g++ git libattr1-dev zlib1g-dev
+
+
+cd ~
+git clone https://github.com/sgan81/apfs-fuse.git
+cd apfs-fuse
+git submodule init
+git submodule update
+
+
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+sudo mkdir /mnt/mac
+sudo apfs-fuse /dev/sdd /mnt/mac

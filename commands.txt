@@ -16,7 +16,7 @@ make
 sudo make install
 
 sudo mkdir /mnt/mac
-sudo apfs-fuse /dev/sdd /mnt/mac
+sudo apfs-fuse /dev/sdd2 /mnt/mac -o allow_other
 
 pcmanfm-qt /mnt/mac
 #or if access denies
